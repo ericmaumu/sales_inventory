@@ -4,11 +4,13 @@ import pygal
 
 import psycopg2
 
+DB_URL ='postgresql://postgres:12345@127.0.0.1:5432/sales_demo'
+DB_URL_PRODUCTION = 'postgres://vycqmcpkunasfh:fc26c203a26a9c52da7a79f48ea1b27f3c48fdaa0ecb233f60fcbc9983621b2a@ec2-54-247-178-166.eu-west-1.compute.amazonaws.com:5432/d6p7ke5hau78ek'
 from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:12345@127.0.0.1:5432/sales_demo'
+app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL_PRODUCTION
 app.config['SECRET_KEY'] = 'KenyaYetuMoja'
 app.config['DEBUG'] = True
 db = SQLAlchemy(app)
